@@ -10,40 +10,32 @@
     "three"
     "four"
     "five";
-    @include breakpoint(medium){
-        
-            grid-template-areas:
-             'one one'
-             'two five'
-             'three five'
-             'four four';
-          
-    }
-    @include breakpoint(large){
-        
-            grid-template-areas:
-            "one one two"
-            "five five five"
-            "three four four";
-          
-    }
-    @include breakpoint(xlarge){
-        
-            grid-template-areas:
-             'one one two five'
-             'three four four five'
-          
-    }
-    
   width: min(95%, rem(1400));
 
   margin-inline: auto;
   padding-block: rem(32);
   padding-inline: rem(16);
+  @include breakpoint(medium) {
+    grid-template-areas:
+      "one one"
+      "two five"
+      "three five"
+      "four four";
+  }
+  @include breakpoint(large) {
+    grid-template-areas:
+      "one one two"
+      "five five five"
+      "three four four";
+  }
+  @include breakpoint(xlarge) {
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+  }
 
- @include breakpoint(medium) {
-        
-    }
+  @include breakpoint(medium) {
+  }
   .testimonial {
     padding: rem(32);
     border-radius: rem(12);
