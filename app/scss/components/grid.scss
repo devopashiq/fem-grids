@@ -1,0 +1,146 @@
+@use "../util" as *;
+
+.testimonial-grid {
+  display: grid;
+  gap: rem(24);
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+    @include breakpoint(medium){
+        
+            grid-template-areas:
+             'one one'
+             'two five'
+             'three five'
+             'four four';
+          
+    }
+    @include breakpoint(large){
+        
+            grid-template-areas:
+            "one one two"
+            "five five five"
+            "three four four";
+          
+    }
+    @include breakpoint(xlarge){
+        
+            grid-template-areas:
+             'one one two five'
+             'three four four five'
+          
+    }
+    
+  width: min(95%, rem(1400));
+
+  margin-inline: auto;
+  padding-block: rem(32);
+  padding-inline: rem(16);
+
+ @include breakpoint(medium) {
+        
+    }
+  .testimonial {
+    padding: rem(32);
+    border-radius: rem(12);
+
+    .flex {
+      display: flex;
+      gap: rem(16);
+
+      img {
+        width: rem(28);
+        border-radius: 50%;
+        aspect-ratio: 1;
+      }
+      .name {
+        font-size: var(--fs-400);
+        font-weight: var(--fw-500);
+        line-height: 1;
+      }
+
+      .position {
+        font-size: var(--fs-300);
+        font-weight: var(--fw-500);
+        opacity: 0.5;
+      }
+    }
+
+    > p:first-of-type {
+      font-size: var(--fs-500);
+      font-weight: var(--fw-600);
+      line-height: 1.1;
+    }
+    > p:last-of-type {
+      opacity: 0.7;
+      color: var(--fc-1);
+    }
+
+    > *:where(:not(:first-child)) {
+      margin-top: 1em;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(4) {
+      background-color: var(--Moderate-violet);
+
+      .flex {
+        .name {
+          color: var(--fc-1);
+        }
+
+        .position {
+          color: var(--fc-1);
+        }
+      }
+
+      > p:first-of-type {
+        color: var(--Light-gray);
+      }
+    }
+
+    &:nth-child(3),
+    &:nth-child(5) {
+      background-color: white;
+      .flex {
+        .name {
+          color: var(--fc-2);
+        }
+
+        .position {
+          color: var(--fc-2);
+        }
+      }
+
+      > p:first-of-type {
+        color: var(--fc-2);
+      }
+      > p:last-of-type {
+        color: var(--fc-2);
+      }
+    }
+    &:nth-child(1) {
+      grid-area: one;
+    }
+    &:nth-child(2) {
+      grid-area: two;
+      background-color: var(--fc-2);
+    }
+    &:nth-child(3) {
+      grid-area: three;
+    }
+    &:nth-child(4) {
+      grid-area: four;
+      background-color: var(--fc-p1);
+    }
+
+    &:nth-child(5) {
+      grid-area: five;
+    }
+  }
+}
