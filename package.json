@@ -2,7 +2,6 @@
   "name": "testimonials-grid-section-main",
   "version": "1.0.0",
   "description": "![Design preview for the Testimonials grid section coding challenge](./design/desktop-preview.jpg)",
-  "main": "index.js",
   "scripts": {
     "build": "npx gulp build",
     "start": "npx gulp"
@@ -16,8 +15,7 @@
     "autoprefixer": "^10.4.20",
     "browser-sync": "^3.0.2",
     "cssnano": "^7.0.6",
-    "dart-sass": "^1.25.0",
-    "gulp": "^5.0.0",
+    "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-postcss": "^10.0.0",
     "gulp-terser": "^2.1.0",

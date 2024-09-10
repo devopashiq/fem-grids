@@ -18,7 +18,7 @@ function scssTask() {
 function browserSyncServe(cb) {
   browsersync.init({
     server: {
-      baseDir: '.',
+      baseDir: 'dist',
     },
     notify: {
       styles: {
